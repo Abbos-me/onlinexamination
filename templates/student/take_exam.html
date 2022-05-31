@@ -1,0 +1,54 @@
+{% extends 'student/studentbase.html' %}
+{% block content %}
+{%load static%}
+
+<head>
+  <link href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+  <script src="//netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
+  <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+
+
+</head>
+<br><br>
+<div class="container my-4">
+    <div class="jumbotron">
+
+        <div class="row">
+
+            <div class="card border-info mx-4 my-4">
+                <div class="card-body text-default">
+
+                    <h4 class="card-title">Imtihon tafsilotlari :</h4>
+                    <p class="card-text">
+                        </p><ul style="list-style:decimal;">
+                            <li>Fan (Kurs) : {{course.course_name}}</li>
+                            <li>Umumiy savol : {{total_questions}}</li>
+                            <li>Variantlar : {{total_marks}}</li>
+                        </ul>
+                    <p></p>
+
+
+
+                    <h4 class="card-title">Qoidalar :</h4>
+                    <p class="card-text">
+                        </p><ul style="list-style:decimal;">
+                            <li>Barcha savollar (ko'p tanlov savoli)</li>
+                            <li><span class="text-danger">Berilganlar orasida faqat bitta tanlov to'g'ri.</span></li>
+                            <li>Har bir savol turli belgilarni ko'taradi.</li>
+                            <li>TEZROQ javob berishga harakat qiling.</li>
+                            <li>Agar siz PRESS-ni yangilasangiz yoki oldingi sahifaga qaytsangiz, siz uchun yangi savol paydo bo'ladi va sizda bo'lgan savol urinishlar soni deb hisoblanadi.</li>
+                            <li>Savollar tasodifiy keltirilgan.</li>
+                            <li>Javobni topshirganingizdan so'ng darhol bir marta belgilarni ko'rish imkoniyatiga ega bo'lasiz.</li>
+                        </ul>
+                    <p></p>
+                    <a href="{% url 'start-exam' course.id  %}" class="btn btn-success" style="border-radius:0px;">Imtihonga kirish</a>
+                </div>  
+                <div class="card-footer">Juda yaxshi omad o'quvchilar!</div>  
+            </div>  
+        </div>  
+
+    </div>
+</div>
+
+<br><br><br><br><br><br>
+{% endblock content %}
